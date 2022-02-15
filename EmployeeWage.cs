@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Employee_Wages
 {
-     class  EmployeeWage
-     {
+    class EmployeeWage
+    {
 
         public static int EmpWage()
         {
@@ -19,29 +19,33 @@ namespace Employee_Wages
 
             //Constants
             const int ABSENT = 0;
-            const int FULLTIME= 1;
+            const int FULLTIME = 1;
             const int WAGEPERHRS = 20;
 
 
-            if (empCheck == ABSENT)
+            switch (empCheck)
             {
-                workingHrs = 0;
-                Console.WriteLine("Employee is Absent");
+
+                case ABSENT:
+                    workingHrs = 0;
+                    Console.WriteLine("Employee is Absent");
+                    break;
+
+                case FULLTIME:
+                    workingHrs = 8;
+                    Console.WriteLine("Employee is full time present");
+                    break;
+
+                default:
+                    workingHrs = 4;
+                    Console.WriteLine("Employee is part time present");
+                    break;
             }
-            else if(empCheck == FULLTIME)
-            {
-                workingHrs = 8;
-                Console.WriteLine("Employee is full time present");
-            }
-            else
-            {
-                workingHrs = 4;
-                Console.WriteLine("Employee is part time present");
-            }
+
             int empWage = WAGEPERHRS * workingHrs;
             return empWage;
-            
+
         }
-     }
+    }
 }
 
