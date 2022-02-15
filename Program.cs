@@ -9,6 +9,8 @@ class Program
     public static void Main(string[] args)
     {
         Console.WriteLine("Wellcome to Employee Wage Program");
-        EmployeeWage.EmpCheck();
+        int empWage = EmployeeWage.EmpWage();
+        Console.WriteLine(empWage);
+
     }
 }
