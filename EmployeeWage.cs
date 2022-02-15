@@ -19,6 +19,7 @@ namespace Employee_Wages
 
             //Constants
             const int ABSENT = 0;
+            const int FULLTIME= 1;
             const int WAGEPERHRS = 20;
 
 
@@ -27,10 +28,15 @@ namespace Employee_Wages
                 workingHrs = 0;
                 Console.WriteLine("Employee is Absent");
             }
-            else
+            else if(empCheck == FULLTIME)
             {
                 workingHrs = 8;
-                Console.WriteLine("Employee is Present");
+                Console.WriteLine("Employee is full time present");
+            }
+            else
+            {
+                workingHrs = 4;
+                Console.WriteLine("Employee is part time present");
             }
             int empWage = WAGEPERHRS * workingHrs;
             return empWage;
