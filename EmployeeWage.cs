@@ -28,17 +28,14 @@ namespace Employee_Wages
 
                 case ABSENT:
                     workingHrs = 0;
-                    Console.WriteLine("Employee is Absent");
                     break;
 
                 case FULLTIME:
                     workingHrs = 8;
-                    Console.WriteLine("Employee is full time present");
                     break;
 
                 default:
                     workingHrs = 4;
-                    Console.WriteLine("Employee is part time present");
                     break;
             }
 
