@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace Employee_Wage;
+namespace Employee_Wages;
 
 class Program
 {
     public static void Main(string[] args)
     {
         Console.WriteLine("Wellcome to Employee Wage Program");
+        EmployeeWage.EmpCheck();
     }
 }
