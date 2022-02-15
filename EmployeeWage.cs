@@ -9,7 +9,7 @@ namespace Employee_Wages
     class EmployeeWage
     {
 
-        public static int EmpWage()
+        public static int GetWorkingHrs()
         {
             Random random = new Random();
             int empCheck = random.Next(0, 3);
@@ -20,7 +20,6 @@ namespace Employee_Wages
             //Constants
             const int ABSENT = 0;
             const int FULLTIME = 1;
-            const int WAGEPERHRS = 20;
 
 
             switch (empCheck)
@@ -39,8 +38,7 @@ namespace Employee_Wages
                     break;
             }
 
-            int empWage = WAGEPERHRS * workingHrs;
-            return empWage;
+            return workingHrs;
 
         }
     }
