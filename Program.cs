@@ -10,11 +10,9 @@ class Program
     {
         Console.WriteLine("Wellcome to Employee Wage Program\n");
 
-        EmployeeWageBuilder dmart = new EmployeeWageBuilder("Dmart", 20, 100, 20);
-        EmployeeWageBuilder tata = new EmployeeWageBuilder("Tata", 25, 125, 30);
-        dmart.GetEmpWage();
-        Console.WriteLine(dmart.ToString());
-        tata.GetEmpWage();
-        Console.WriteLine(tata.ToString());
+        EmployeeWageBuilder employeeWageBuilder = new EmployeeWageBuilder(2);
+        employeeWageBuilder.AddEmployeeInfo("Tata", 20, 100, 20);
+        employeeWageBuilder.AddEmployeeInfo("Dmart", 25, 125, 25);
+        employeeWageBuilder.CalWage();
     }
 }
