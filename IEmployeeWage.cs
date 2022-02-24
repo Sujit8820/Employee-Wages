@@ -9,10 +9,8 @@ namespace Employee_Wages
     interface IEmployeeWage
     {
         public void AddEmployeeInfo(string companyName, int maxDay, int maxHrs, int wagePerHr);
-
-        public void GetEmpWage(EmployeeWage employeeWages);
-
-        public void CalWage();
+        public void GetEmpWage(EmployeeWage employeeWages, string CompanyName);
+        public void CalWage(string CompanyName);
 
     }
 }

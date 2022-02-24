@@ -15,6 +15,6 @@ class Program
         employeeWageBuilder.AddEmployeeInfo("Dmart", 25, 125, 25);
         employeeWageBuilder.AddEmployeeInfo("Reliance", 30, 140, 35);
         employeeWageBuilder.AddEmployeeInfo("BigBazar", 23, 110, 22);
-        employeeWageBuilder.CalWage();
+        employeeWageBuilder.CalWage("Dmart");
     }
 }
