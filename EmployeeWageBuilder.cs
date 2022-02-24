@@ -9,21 +9,13 @@ namespace Employee_Wages
 {
     class EmployeeWageBuilder : IEmployeeWage
     {
-        int count = 0;
 
         ArrayList employeeWages = new ArrayList();
 
-        // EmployeeWage[] employeeWages;
-
-     /*   public EmployeeWageBuilder(int size)
-        {
-            this.employeeWages = new EmployeeWage[size];
-        }*/
         public void AddEmployeeInfo(string companyName, int maxDay, int maxHrs, int wagePerHr)
         {
             employeeWages.Add(new EmployeeWage(companyName, maxDay, maxHrs, wagePerHr));
-            /*this.employeeWages[count] = new EmployeeWage(companyName, maxDay, maxHrs, wagePerHr);
-            count++;*/
+
         }
 
         public void CalWage()
@@ -32,13 +24,12 @@ namespace Employee_Wages
             {
                 GetEmpWage((EmployeeWage)empWageObj);
 
-              /*  int totalWage = GetEmpWage(empWageObj);
-                empWageObj.SetTotalEmpWage(totalWage);
-                Console.WriteLine(empWageObj.ToString());*/
             }
         }
         public void GetEmpWage(EmployeeWage employeeWages)
         {
+            Dictionary<int, int> dailyWage = new Dictionary<int, int>();
+
             int workingHrs = 0;
             int day = 0;
             int totalWorkingHrs = 0;
@@ -70,20 +61,17 @@ namespace Employee_Wages
                         workingHrs = 4;
                         break;
                 }
-
-                totalWorkingHrs = totalWorkingHrs + workingHrs;
-
+               
                 int empWage = employeeWages.wagePerHr * workingHrs;
                 empTotalWage = empTotalWage + empWage;
+                dailyWage.Add(day, empWage);
+
                 day++;
             }
-           // return empTotalWage;
-
 
             employeeWages.SetTotalEmpWage(empTotalWage);
-            Console.WriteLine( employeeWages.ToString());
+            Console.WriteLine(employeeWages.ToString());
         }
-
 
 
     }
