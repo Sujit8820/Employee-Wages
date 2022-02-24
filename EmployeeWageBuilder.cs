@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_Wages
 {
-    class EmployeeWageBuilder
+    class EmployeeWageBuilder : IEmployeeWage
     {
         int count = 0;
 
