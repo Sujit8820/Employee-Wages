@@ -10,7 +10,7 @@ namespace Employee_Wages
     {
         public void AddEmployeeInfo(string companyName, int maxDay, int maxHrs, int wagePerHr);
 
-        public int GetEmpWage(EmployeeWage employeeWages);
+        public void GetEmpWage(EmployeeWage employeeWages);
 
         public void CalWage();
 

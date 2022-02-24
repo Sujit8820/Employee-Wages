@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,28 +11,33 @@ namespace Employee_Wages
     {
         int count = 0;
 
-        EmployeeWage[] employeeWages;
+        ArrayList employeeWages = new ArrayList();
 
-        public EmployeeWageBuilder(int size)
+        // EmployeeWage[] employeeWages;
+
+     /*   public EmployeeWageBuilder(int size)
         {
             this.employeeWages = new EmployeeWage[size];
-        }
+        }*/
         public void AddEmployeeInfo(string companyName, int maxDay, int maxHrs, int wagePerHr)
         {
-            this.employeeWages[count] = new EmployeeWage(companyName, maxDay, maxHrs, wagePerHr);
-            count++;
+            employeeWages.Add(new EmployeeWage(companyName, maxDay, maxHrs, wagePerHr));
+            /*this.employeeWages[count] = new EmployeeWage(companyName, maxDay, maxHrs, wagePerHr);
+            count++;*/
         }
 
         public void CalWage()
         {
             foreach (var empWageObj in employeeWages)
             {
-                int totalWage = GetEmpWage(empWageObj);
+                GetEmpWage((EmployeeWage)empWageObj);
+
+              /*  int totalWage = GetEmpWage(empWageObj);
                 empWageObj.SetTotalEmpWage(totalWage);
-                Console.WriteLine(empWageObj.ToString());
+                Console.WriteLine(empWageObj.ToString());*/
             }
         }
-        public int GetEmpWage(EmployeeWage employeeWages)
+        public void GetEmpWage(EmployeeWage employeeWages)
         {
             int workingHrs = 0;
             int day = 0;
@@ -71,7 +77,11 @@ namespace Employee_Wages
                 empTotalWage = empTotalWage + empWage;
                 day++;
             }
-            return empTotalWage;
+           // return empTotalWage;
+
+
+            employeeWages.SetTotalEmpWage(empTotalWage);
+            Console.WriteLine( employeeWages.ToString());
         }
 
 
