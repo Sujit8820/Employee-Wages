@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_Wages
 {
-   
+
     class EmployeeWage
 
     {
@@ -14,7 +14,7 @@ namespace Employee_Wages
         public int maxDay;
         public int maxHrs;
         public int wagePerHr;
-        int totalWage=0;
+        int totalWage = 0;
 
         public EmployeeWage(string companyName, int maxDay, int maxHrs, int wagePerHr)
         {
@@ -27,7 +27,6 @@ namespace Employee_Wages
         public void SetTotalEmpWage(int totalWage)
         {
             this.totalWage = totalWage;
-           
         }
 
         public string ToString()
@@ -35,10 +34,6 @@ namespace Employee_Wages
             return "\nTotal employee wage for company " + companyName + " is " + totalWage;
 
         }
-
-
-
-
 
     }
 }

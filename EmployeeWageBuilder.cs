@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employee_Wages
 {
-     class EmployeeWageBuilder
+    class EmployeeWageBuilder
     {
         int count = 0;
 
@@ -18,22 +18,20 @@ namespace Employee_Wages
         }
         public void AddEmployeeInfo(string companyName, int maxDay, int maxHrs, int wagePerHr)
         {
-            employeeWages[count] = new EmployeeWage(companyName, maxDay, maxHrs, wagePerHr);
-           // employeeWages.Add(new EmployeeWage( companyName, maxDay, maxHrs,  wagePerHr));
-           count++;
+            this.employeeWages[count] = new EmployeeWage(companyName, maxDay, maxHrs, wagePerHr);
+            count++;
         }
 
         public void CalWage()
         {
-            foreach(var empWageObj in employeeWages)
+            foreach (var empWageObj in employeeWages)
             {
                 int totalWage = GetEmpWage(empWageObj);
                 empWageObj.SetTotalEmpWage(totalWage);
                 Console.WriteLine(empWageObj.ToString());
-
             }
         }
-        public  int GetEmpWage(EmployeeWage employeeWages)
+        public int GetEmpWage(EmployeeWage employeeWages)
         {
             int workingHrs = 0;
             int day = 0;
@@ -73,9 +71,10 @@ namespace Employee_Wages
                 empTotalWage = empTotalWage + empWage;
                 day++;
             }
-                return empTotalWage;
+            return empTotalWage;
         }
-        
+
+
 
     }
 }
